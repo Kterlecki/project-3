@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<h3> add task </h3>`
+
+  <div class="row">
+    <form action='' method='POST' class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">assignment</i>
+          <input id="task_name" name='task_name' type="text" class="validate">
+          <label for="icon_prefix">Task Name</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">subject</i>
+          <textarea name='exercise_description' id='task_description' class='materialize-textarea' ></textarea>
+          <label for="icon_telephone">Exercise description</label>
+        </div>
+      </div>
+    </form>
+  </div>
+        
+
+
+{% endblock %}
