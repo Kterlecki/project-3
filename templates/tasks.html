@@ -4,8 +4,16 @@
   <ul class="collapsible popout">
   {% for task in tasks %}
     <li>
-      <div class="collapsible-header"><i class="material-icons">fitness_center</i>
-      <strong>{{task.task_name}}</strong> - {{task.date}} </div>
+      <div class="collapsible-header">
+         <div class='col s3'>
+            <i class="material-icons">fitness_center</i>
+            <a class="waves-effect waves-light btn btn_small red">Done</a>
+            <a class="waves-effect waves-light btn btn_small blue">Edit</a>
+        </div>
+        <div class='col s9'>
+            <strong>{{task.task_name}}</strong> - {{task.date}} </div>
+        </div>
+      
       <div class="collapsible-body">
       <span>{{task.exercise_description}}</span></div>
     </li>
