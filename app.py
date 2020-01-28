@@ -4,7 +4,6 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
 
 app = Flask(__name__)
-
 app.config['MONGO_DBNAME'] = 'task_manager'
 app.config['MONGO_URI'] = 'mongodb+srv://terlek:Google123@project3-f7d5y.mongodb.net/task_manager?retryWrites=true&w=majority'
 
@@ -29,9 +28,9 @@ def insert_task():
 
 
 @app.route('/edit_task/<task_id>')
-def edit_task(task_id)
-    the_task= mongo.db.tasks.find_one({'_id': ObjectId(task_id)})
-    all_categories = mongo.db.categories.find()
+def edit_task(task_id):
+    the_task =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    all_categories =  mongo.db.categories.find()
     return render_template('edittask.html', task=the_task, categories=all_categories)
 
 if __name__ == '__main__':
