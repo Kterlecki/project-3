@@ -11,7 +11,11 @@
                     <select id='category' name='category_name'>
                     <option value="" disabled selected>Choose Category</option>
                     {% for cat in categories%}
-                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                            {% if cat.category_name == task.category_name %}
+                                <option value="{{cat.category_name}}" selected>{{cat.category_name}}</option>
+                            {% else %}
+                                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                        {% endif%}
                     {% endfor %}
                     </select>
                     <label>Exercise catergoty</label>
@@ -20,7 +24,7 @@
          <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="task_name" name='task_name' type="text" class="validate">
+                <input id="task_name" name='task_name' type="text" class="validate" value= '{{task.task_name}}'>
                 <label for="icon_prefix">Task Name</label>
             </div>
         </div>
@@ -28,26 +32,35 @@
         <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">subject</i>
-                <textarea name='exercise_description' id='task_description' class='materialize-textarea' ></textarea>
+                <textarea name='exercise_description' id='task_description' class='materialize-textarea' >{{task.exercise_description}}</textarea>
                 <label for="icon_telephone">Exercise description</label>
             </div>
         </div>
         <div class="row matfix">
             <div class="input-field col s12 matfix">
                 <i class="material-icons prefix">today</i>
-                <input id="date" name='date' type="text" class="datepicker matfix">
+                <input id="due_date" name='due_date' type="text" class="datepicker matfix">
                 <label for="icon_prefix">Date performed</label>
             </div>
         </div>
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Add exercise
+            <button class="btn waves-effect waves-light" type="submit" name="action">Edit exercise
                 <i class="material-icons right">playlist_add</i>
             </button>
           </div>
 
     </form>
   </div>
-        
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+        due_date = Date.parse('{{task.due_date}}');
+        $('#due_date').pickadate('picker').set('select', due_date, { format: 'dd/mm/yyyy' }).trigger('change');
+    });
+</script>
 
 {% endblock %}
