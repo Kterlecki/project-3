@@ -6,7 +6,7 @@ This is a more conveniant way of keeping on top of your exercise schedule than a
 
 
 Please find a live Demo of the website below:
-http://gym-tracker-project-three.herokuapp.com/get_tasks
+https://gym-tracker-project-three.herokuapp.com/
 
 
 # UX
@@ -124,7 +124,7 @@ For good practise a variable has been added into the password field for mongo db
 Heroku has been used to deploy the application
 
 Please find a live Demo of the website below:
-http://gym-tracker-project-three.herokuapp.com/get_tasks
+https://gym-tracker-project-three.herokuapp.com/
 
 # Credits
 
