@@ -1,41 +1,40 @@
-{% extends 'base.html'%}
-{% block content %}
-
-<h3> add task </h3>
+{% extends 'base.html' %} {% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<h3>Add Task</h3>
 <div class="row">
-    <form action='{{url_for('insert_task')}}' method='POST' class="col s12">
-      <div class="row">
+    <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12">
+        <div class="row">
             <div class="row">
                 <div class="input-field col s12">
-                <i class='material-icons prefix'>poll</i>
-                    <select id='category' name='category_name'>
-                    <option value="" disabled selected>Choose Category</option>
-                    {% for cat in categories%}
-                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                    {% endfor %}
-                    </select>
-                    <label>Exercise catergoty</label>
+                    <i class="material-icons prefix">poll</i>
+                    <select id="category" name="category_name">
+                  <option value="" disabled selected>Choose Category</option>
+                  {% for cat in categories %}
+                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                  {% endfor %}
+                </select>
+                    <label>Exercise Category</label>
                 </div>
             </div>
-         <div class="row">
+         
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
                 <input id="task_name" name='task_name' type="text" class="validate">
                 <label for="icon_prefix">Task Name</label>
             </div>
-        </div>
+        
         </div>
         <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">subject</i>
-                <textarea name='exercise_description' id='task_description' class='materialize-textarea' ></textarea>
+                <textarea name='exercise_description' id='exercise_description' class='materialize-textarea' ></textarea>
                 <label for="icon_telephone">Exercise description</label>
             </div>
         </div>
-        <div class="row matfix">
-            <div class="input-field col s12 matfix">
+        <div  class="row ">
+            <div id="matfix" class="input-field col s12 ">
                 <i class="material-icons prefix">today</i>
-                <input id="due_date" name='due_date' type="text" class="datepicker matfix">
+                <input id="date" name="date" type="text" class="datepicker ">
                 <label for="icon_prefix">Date performed</label>
             </div>
         </div>
@@ -47,7 +46,7 @@
 
     </form>
   </div>
-        
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 {% endblock %}
