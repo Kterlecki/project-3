@@ -13,7 +13,6 @@
                 <a href="{{url_for('get_tasks')}}" class="brand-logo center">Exercise Manager</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('get_tasks')}}">Home</a></li>
                     <li><a href="{{url_for('add_task')}}">New Task</a></li>
                     <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
                 </ul>
@@ -37,6 +36,7 @@
   crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  
+ 
  <script>$(document).ready(function(){
     $('.collapsible').collapsible();
     $('select').formSelect();
@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, options);
   });
+  
 </script>
   </body>
 </html>

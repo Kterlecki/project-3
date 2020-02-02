@@ -3,6 +3,8 @@ from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
+
+
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'task_manager'
 app.config['MONGO_URI'] = 'mongodb+srv://terlek:Google123@project3-f7d5y.mongodb.net/task_manager?retryWrites=true&w=majority'
